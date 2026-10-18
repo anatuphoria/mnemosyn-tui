@@ -1,0 +1,36 @@
+[project]
+name = "mnemosyn-tui"
+version = "0.1.0"
+description = "Terminal viewer for Mnemosyn atlas packages of the central nervous system"
+readme = "README.md"
+license = { text = "GPL-3.0-or-later" }
+requires-python = ">=3.11"
+dependencies = [
+  "textual>=3.0",
+  "textual-hires-canvas>=0.14",
+  "par-textual-image>=0.1",
+  "numpy>=1.26",
+  "pillow>=10.0",
+  "nibabel>=5.0",
+  "numba>=0.60",
+  "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.scripts]
+mnemosyn-tui = "brain_tui.app:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["brain_tui", "cns_atlas"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+pythonpath = ["tests"]
