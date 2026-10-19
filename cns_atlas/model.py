@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 FORMAT_VERSION = 1
-KINDS = ("group", "region", "nucleus", "tract", "ventricle", "nerve-root")
+KINDS = ("group", "region", "nucleus", "tract", "ventricle", "nerve-root", "shell", "cover")
 SIDES = ("left", "right", "midline", "none")
 STEP_SIDES = ("same", "opposite", "midline")
 PATHWAY_SIDES = ("one", "both")
